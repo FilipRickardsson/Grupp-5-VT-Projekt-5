@@ -1,17 +1,23 @@
 package com.quizztool.quizztoolbackend.repositories;
 
 import com.quizztool.quizztoolbackend.models.QuizzUser;
-import java.util.List;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 
 public class QuizzUserRepository {
 
-    public List<QuizzUser> getQuizzUsers() {
+    public QuizzUser getQuizzUser(String username, String password) {
         Session session = HibernateUtil.getSession();
-        session.beginTransaction();
-        List<QuizzUser> quizzUsers = session.createCriteria(QuizzUser.class).list();
+
+        Criteria criteria = session.createCriteria(QuizzUser.class);
+        criteria.add(Restrictions.like("username", username, MatchMode.EXACT));
+        criteria.add(Restrictions.like("password", password, MatchMode.EXACT));
+        QuizzUser quizzUser = (QuizzUser) criteria.uniqueResult();
+
         session.close();
-        return quizzUsers;
+        return quizzUser;
     }
 
 }

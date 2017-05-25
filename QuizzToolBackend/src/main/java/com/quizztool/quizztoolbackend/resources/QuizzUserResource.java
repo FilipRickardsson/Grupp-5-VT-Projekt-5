@@ -7,7 +7,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import com.quizztool.quizztoolbackend.models.QuizzUser;
 import com.quizztool.quizztoolbackend.services.QuizzUserService;
-import java.util.List;
+import javax.ws.rs.PathParam;
 
 @Path("/quizz_users")
 @Produces(MediaType.APPLICATION_JSON)
@@ -17,8 +17,9 @@ public class QuizzUserResource {
     QuizzUserService quizzUserService = new QuizzUserService();
 
     @GET
-    public List<QuizzUser> getQuizzUsers() {
-        return quizzUserService.getQuizzUsers();
+    @Path("{username}&{password}")
+    public QuizzUser getQuizzUser(@PathParam("username") String username, @PathParam("password") String password) {
+        return quizzUserService.getQuizzUser(username, password);
     }
 
 }

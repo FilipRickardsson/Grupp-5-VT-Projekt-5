@@ -13,6 +13,6 @@
         <property name="hbm2ddl.auto">update</property>
         
         <mapping class="com.quizztool.quizztoolbackend.models.QuizzUser"/>
-        
+        <mapping class="com.quizztool.quizztoolbackend.models.Quizz"/>
     </session-factory>
 </hibernate-configuration>

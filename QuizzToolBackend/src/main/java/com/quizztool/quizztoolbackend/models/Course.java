@@ -50,11 +50,13 @@ public class Course implements Serializable {
         this.quizzes = quizzes;
     }
 
-    public List<QuizzUser> getQuizzUsers() {
-        return quizzUsers;
-    }
-
     public void setQuizzUsers(List<QuizzUser> quizzUsers) {
         this.quizzUsers = quizzUsers;
     }
+
+    @Override
+    public String toString() {
+        return "Course{" + "id=" + id + ", name=" + name + ", quizzes=" + quizzes + '}';
+    }
+    
 }

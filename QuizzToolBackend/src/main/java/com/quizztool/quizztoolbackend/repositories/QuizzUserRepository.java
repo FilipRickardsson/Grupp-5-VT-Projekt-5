@@ -16,6 +16,9 @@ public class QuizzUserRepository {
         criteria.add(Restrictions.like("password", password, MatchMode.EXACT));
         QuizzUser quizzUser = (QuizzUser) criteria.uniqueResult();
 
+        System.out.println("Debug 1: " + quizzUser);
+        System.out.println("Debug 2: " + quizzUser.getCourses().toString());
+
         session.close();
         return quizzUser;
     }

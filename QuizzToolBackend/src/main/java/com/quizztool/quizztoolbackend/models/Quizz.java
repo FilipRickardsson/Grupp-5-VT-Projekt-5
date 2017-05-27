@@ -68,27 +68,16 @@ public class Quizz implements Serializable {
         this.showResult = showResult;
     }
 
-    public List<Question> getQuestions() {
-        return questions;
-    }
-
     public void setQuestions(List<Question> questions) {
         this.questions = questions;
-    }
-
-    public List<Course> getCourses() {
-        return courses;
     }
 
     public void setCourses(List<Course> courses) {
         this.courses = courses;
     }
 
-    public List<QuizzResult> getResults() {
-        return results;
-    }
-
     public void setResults(List<QuizzResult> results) {
         this.results = results;
     }
+
 }

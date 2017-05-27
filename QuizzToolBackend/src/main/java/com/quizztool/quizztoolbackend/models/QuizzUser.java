@@ -1,10 +1,9 @@
 package com.quizztool.quizztoolbackend.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -25,32 +24,29 @@ public class QuizzUser implements Serializable {
     @Enumerated(EnumType.STRING)
     private QuizzUserType quizzUserType;
 
-    @ManyToMany(mappedBy="Course")
-    @JsonBackReference
-    @JsonIgnore  
+    @ManyToMany(mappedBy = "quizzUsers")
+    @JsonManagedReference
     private List<Course> courses;
-     
-    @ManyToMany(mappedBy="Alternative")
+
+    @ManyToMany
     @JsonBackReference
-    @JsonIgnore  
-    private List<Alternative> alternatives;
-    
-    @OneToMany(mappedBy="Result")
+    private List<Alternative> answers;
+
+    @OneToMany(mappedBy = "quizzUser")
     @JsonBackReference
-    @JsonIgnore  
-    private List<Result> results;
-    
+    private List<QuizzResult> results;
+
     public QuizzUser() {
     }
 
-    public QuizzUser(int id, String username, String password, QuizzUserType quizzUserType, List<Course> courses, List<Alternative> alternatives, List<Result> results) {
+    public QuizzUser(int id, String username, String password, QuizzUserType quizzUserType, List<Course> courses, List<Alternative> answers, List<QuizzResult> results) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.quizzUserType = quizzUserType;
         this.courses = courses;
-        this.alternatives = alternatives;
-        this.results=results;
+        this.answers = answers;
+        this.results = results;
     }
 
     public int getId() {
@@ -93,19 +89,19 @@ public class QuizzUser implements Serializable {
         this.courses = courses;
     }
 
-    public List<Alternative> getAlternatives() {
-        return alternatives;
+    public List<Alternative> getAnswers() {
+        return answers;
     }
 
-    public void setAlternatives(List<Alternative> alternatives) {
-        this.alternatives = alternatives;
-    }    
+    public void setAnswers(List<Alternative> answers) {
+        this.answers = answers;
+    }
 
-    public List<Result> getResults() {
+    public List<QuizzResult> getResults() {
         return results;
     }
 
-    public void setResults(List<Result> results) {
+    public void setResults(List<QuizzResult> results) {
         this.results = results;
     }
 }

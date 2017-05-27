@@ -1,30 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.quizztool.quizztoolbackend.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
-/**
- *
- * @author Dhiaa Eddin Anabtawi
- */
-public class Alternative {
+@Entity
+public class Alternative implements Serializable {
+
+    @Id
+    @GeneratedValue
     private int alternativeId;
     private String text;
     private boolean correct;
-    
-    @ManyToMany(mappedBy="Question")
+
+    @ManyToMany(mappedBy = "alternatives")
     @JsonBackReference
     private List<Question> questions;
-    
-    @ManyToMany(mappedBy="QuizzUser")
-    @JsonBackReference
-    private List <QuizzUser> quizzUsers;
+
+    @ManyToMany(mappedBy = "answers")
+    @JsonManagedReference
+    private List<QuizzUser> quizzUsers;
 
     public Alternative() {
     }
@@ -77,5 +77,4 @@ public class Alternative {
         this.quizzUsers = quizzUsers;
     }
 
-   
 }

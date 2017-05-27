@@ -39,15 +39,15 @@ public class QuizzUser implements Serializable {
     public QuizzUser() {
     }
 
-    public QuizzUser(int id, String username, String password, QuizzUserType quizzUserType, List<Course> courses, List<Alternative> answers, List<QuizzResult> results) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.quizzUserType = quizzUserType;
-        this.courses = courses;
-        this.answers = answers;
-        this.results = results;
-    }
+//    public QuizzUser(int id, String username, String password, QuizzUserType quizzUserType, List<Course> courses, List<Alternative> answers, List<QuizzResult> results) {
+//        this.id = id;
+//        this.username = username;
+//        this.password = password;
+//        this.quizzUserType = quizzUserType;
+//        this.courses = courses;
+//        this.answers = answers;
+//        this.results = results;
+//    }
 
     public int getId() {
         return id;
@@ -89,19 +89,17 @@ public class QuizzUser implements Serializable {
         this.courses = courses;
     }
 
-    public List<Alternative> getAnswers() {
-        return answers;
-    }
-
     public void setAnswers(List<Alternative> answers) {
         this.answers = answers;
-    }
-
-    public List<QuizzResult> getResults() {
-        return results;
     }
 
     public void setResults(List<QuizzResult> results) {
         this.results = results;
     }
+
+    @Override
+    public String toString() {
+        return "QuizzUser{" + "id=" + id + ", username=" + username + ", password=" + password + ", quizzUserType=" + quizzUserType + ", courses=" + courses + ", answers=" + answers + ", results=" + results + '}';
+    }
+
 }

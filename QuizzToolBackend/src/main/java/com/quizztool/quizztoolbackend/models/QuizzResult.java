@@ -1,47 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.quizztool.quizztoolbackend.models;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import java.io.Serializable;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-/**
- *
- * @author Dhiaa Eddin Anabtawi
- */
-public class Result {
-    @Id@GeneratedValue
+@Entity
+public class QuizzResult implements Serializable {
+
+    @Id
+    @GeneratedValue
     private int id;
-    
+
     @Enumerated(EnumType.STRING)
     private GradeType grade;
-    
+
     private int points;
-    private String time;
-    
+    private String quizzTime;
+
     @ManyToOne
     @JsonManagedReference
     private QuizzUser quizzUser;
-    
+
     @ManyToOne
     @JsonManagedReference
     private Quizz quizz;
 
-    public Result() {
+    public QuizzResult() {
     }
 
-    public Result(int id, GradeType grade, int points, String time, QuizzUser quizzUser, Quizz quizz) {
+    public QuizzResult(int id, GradeType grade, int points, String quizzTime, QuizzUser quizzUser, Quizz quizz) {
         this.id = id;
         this.grade = grade;
         this.points = points;
-        this.time = time;
+        this.quizzTime = quizzTime;
         this.quizzUser = quizzUser;
         this.quizz = quizz;
     }
@@ -71,11 +67,11 @@ public class Result {
     }
 
     public String getTime() {
-        return time;
+        return quizzTime;
     }
 
     public void setTime(String time) {
-        this.time = time;
+        this.quizzTime = time;
     }
 
     public QuizzUser getQuizzUser() {
@@ -93,5 +89,5 @@ public class Result {
     public void setQuizz(Quizz quizz) {
         this.quizz = quizz;
     }
-    
+
 }

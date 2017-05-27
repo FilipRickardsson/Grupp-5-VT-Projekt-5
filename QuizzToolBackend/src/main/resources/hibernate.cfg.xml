@@ -17,6 +17,6 @@
         <mapping class="com.quizztool.quizztoolbackend.models.Alternative"/>
         <mapping class="com.quizztool.quizztoolbackend.models.Question"/>
         <mapping class="com.quizztool.quizztoolbackend.models.Course"/>
-        <mapping class="com.quizztool.quizztoolbackend.models.Result"/>
+        <mapping class="com.quizztool.quizztoolbackend.models.QuizzResult"/>
     </session-factory>
 </hibernate-configuration>

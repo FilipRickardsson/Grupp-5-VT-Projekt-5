@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.quizztool.quizztoolbackend.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
@@ -15,39 +10,33 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
-/**
- *
- * @author Dhiaa Eddin Anabtawi
- */
 @Entity
-public class Quizz implements Serializable{
-    
+public class Quizz implements Serializable {
+
     @Id
     @GeneratedValue
-    private int quizId;
-    
+    private int quizzId;
+
     private String name;
     private boolean showResult;
-    
-    @ManyToMany(mappedBy="Question")
-    @JsonBackReference
-    @JsonIgnore  
+
+    @ManyToMany
+    @JsonManagedReference
     private List<Question> questions;
-    
-    @ManyToMany(mappedBy="Course")
+
+    @ManyToMany(mappedBy = "quizzes")
     @JsonBackReference
     private List<Course> courses;
-    
-    @OneToMany(mappedBy="Result")
+
+    @OneToMany(mappedBy = "quizz")
     @JsonBackReference
-    @JsonIgnore
-    private List<Result> results;
+    private List<QuizzResult> results;
 
     public Quizz() {
     }
 
-    public Quizz(int quizId, String name, boolean showResult, List<Question> questions, List<Course> courses, List<Result> results) {
-        this.quizId = quizId;
+    public Quizz(int quizzId, String name, boolean showResult, List<Question> questions, List<Course> courses, List<QuizzResult> results) {
+        this.quizzId = quizzId;
         this.name = name;
         this.showResult = showResult;
         this.questions = questions;
@@ -56,11 +45,11 @@ public class Quizz implements Serializable{
     }
 
     public int getQuizId() {
-        return quizId;
+        return quizzId;
     }
 
     public void setQuizId(int quizId) {
-        this.quizId = quizId;
+        this.quizzId = quizId;
     }
 
     public String getName() {
@@ -95,11 +84,11 @@ public class Quizz implements Serializable{
         this.courses = courses;
     }
 
-    public List<Result> getResults() {
+    public List<QuizzResult> getResults() {
         return results;
     }
 
-    public void setResults(List<Result> results) {
+    public void setResults(List<QuizzResult> results) {
         this.results = results;
     }
 }

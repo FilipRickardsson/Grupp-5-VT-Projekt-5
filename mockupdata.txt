@@ -1,0 +1,103 @@
+INSERT INTO `quizztool`.`quizzuser` (`id`, `password`, `quizzUserType`, `username`) VALUES ('1', 'kalle', 'STUDENT', 'Kalle');
+
+INSERT INTO `quizztool`.`quizzuser` (`id`, `password`, `quizzUserType`, `username`) VALUES ('2', 'stina', 'STUDENT', 'Stina');
+
+INSERT INTO `quizztool`.`quizzuser` (`id`, `password`, `quizzUserType`, `username`) VALUES ('3', 'pelle', 'TEACHER', 'Pelle');
+
+
+INSERT INTO `quizztool`.`course` (`id`, `name`) VALUES ('1', 'Matte');
+
+INSERT INTO `quizztool`.`course` (`id`, `name`) VALUES ('2', 'Kemi');
+
+INSERT INTO `quizztool`.`course_quizzuser` (`courses_id`, `quizzUsers_id`) VALUES ('1', '1');
+
+INSERT INTO `quizztool`.`course_quizzuser` (`courses_id`, `quizzUsers_id`) VALUES ('2', '1');
+
+
+INSERT INTO `quizztool`.`quizz` (`quizzId`, `name`, `showResult`) VALUES ('1', 'Algebra', TRUE);
+
+INSERT INTO `quizztool`.`quizz` (`quizzId`, `name`, `showResult`) VALUES ('2', 'Derivata', FALSE);
+
+INSERT INTO `quizztool`.`quizz` (`quizzId`, `name`, `showResult`) VALUES ('3', 'Nitrogen', TRUE);
+
+
+INSERT INTO `quizztool`.`course_quizz` (`courses_id`, `quizzes_quizzId`) VALUES ('1', '1');
+
+INSERT INTO `quizztool`.`course_quizz` (`courses_id`, `quizzes_quizzId`) VALUES ('1', '2');
+
+INSERT INTO `quizztool`.`course_quizz` (`courses_id`, `quizzes_quizzId`) VALUES ('2', '3');
+
+
+INSERT INTO `quizztool`.`question` (`id`, `text`) VALUES ('1', '1 + 1 =');
+
+INSERT INTO `quizztool`.`question` (`id`, `text`) VALUES ('2', '2 + 2 =');
+
+INSERT INTO `quizztool`.`question` (`id`, `text`) VALUES ('3', 'What is Oxygen?');
+INSERT INTO `quizztool`.`question` (`id`, `text`) VALUES ('4', 'What is a Derivative?');
+
+
+INSERT INTO `quizztool`.`quizz_question` (`quizzes_quizzId`, `questions_id`) VALUES ('1', '1');
+
+INSERT INTO `quizztool`.`quizz_question` (`quizzes_quizzId`, `questions_id`) VALUES ('1', '2');
+
+INSERT INTO `quizztool`.`quizz_question` (`quizzes_quizzId`, `questions_id`) VALUES ('3', '3');
+
+
+INSERT INTO `quizztool`.`quizz_question` (`quizzes_quizzId`, `questions_id`) VALUES ('2', '4');
+
+
+INSERT INTO `quizztool`.`alternative` (`alternativeId`, `correct`, `text`) VALUES ('1', TRUE, '2');
+
+INSERT INTO `quizztool`.`alternative` (`alternativeId`, `correct`, `text`) VALUES ('2', FALSE, '1');
+
+INSERT INTO `quizztool`.`alternative` (`alternativeId`, `correct`, `text`) VALUES ('3', FALSE, '3');
+
+INSERT INTO `quizztool`.`alternative` (`alternativeId`, `correct`, `text`) VALUES ('4', TRUE, '4');
+
+INSERT INTO `quizztool`.`alternative` (`alternativeId`, `correct`, `text`) VALUES ('5', FALSE, '3');
+
+INSERT INTO `quizztool`.`alternative` (`alternativeId`, `correct`, `text`) VALUES ('6', FALSE, '2');
+
+INSERT INTO `quizztool`.`alternative` (`alternativeId`, `correct`, `text`) VALUES ('7', TRUE, 'Gas');
+
+INSERT INTO `quizztool`.`alternative` (`alternativeId`, `correct`, `text`) VALUES ('8', FALSE, 'Liquid');
+
+INSERT INTO `quizztool`.`alternative` (`alternativeId`, `correct`, `text`) VALUES ('9', FALSE, 'Solid');
+
+INSERT INTO `quizztool`.`alternative` (`alternativeId`, `correct`, `text`) VALUES ('10', TRUE, 'Function');
+
+INSERT INTO `quizztool`.`alternative` (`alternativeId`, `correct`, `text`) VALUES ('11', FALSE, 'Horse');
+
+INSERT INTO `quizztool`.`alternative` (`alternativeId`, `correct`, `text`) VALUES ('12', FALSE, 'Rocket');
+
+
+INSERT INTO `quizztool`.`question_alternative` (`questions_id`, `alternatives_alternativeId`) VALUES ('1', '1');
+
+INSERT INTO `quizztool`.`question_alternative` (`questions_id`, `alternatives_alternativeId`) VALUES ('1', '2');
+
+INSERT INTO `quizztool`.`question_alternative` (`questions_id`, `alternatives_alternativeId`) VALUES ('1', '3');
+
+INSERT INTO `quizztool`.`question_alternative` (`questions_id`, `alternatives_alternativeId`) VALUES ('2', '4');
+
+INSERT INTO `quizztool`.`question_alternative` (`questions_id`, `alternatives_alternativeId`) VALUES ('2', '5');
+
+INSERT INTO `quizztool`.`question_alternative` (`questions_id`, `alternatives_alternativeId`) VALUES ('2', '6');
+
+INSERT INTO `quizztool`.`question_alternative` (`questions_id`, `alternatives_alternativeId`) VALUES ('3', '7');
+
+INSERT INTO `quizztool`.`question_alternative` (`questions_id`, `alternatives_alternativeId`) VALUES ('3', '8');
+I
+NSERT INTO `quizztool`.`question_alternative` (`questions_id`, `alternatives_alternativeId`) VALUES ('3', '9');
+
+INSERT INTO `quizztool`.`question_alternative` (`questions_id`, `alternatives_alternativeId`) VALUES ('4', '10');
+
+INSERT INTO `quizztool`.`question_alternative` (`questions_id`, `alternatives_alternativeId`) VALUES ('4', '11');
+
+INSERT INTO `quizztool`.`question_alternative` (`questions_id`, `alternatives_alternativeId`) VALUES ('4', '12');
+
+
+INSERT INTO `quizztool`.`quizzresult` (`id`, `grade`, `points`, `quizzTime`, `quizz_quizzId`, `quizzUser_id`) VALUES ('1', 'VG', '2', '1', '1', '1');
+
+INSERT INTO `quizztool`.`quizzresult` (`id`, `grade`, `points`, `quizzTime`, `quizz_quizzId`, `quizzUser_id`) VALUES ('2', 'VG', '1', '1', '2', '1');
+
+INSERT INTO `quizztool`.`quizzresult` (`id`, `grade`, `points`, `quizzTime`, `quizz_quizzId`, `quizzUser_id`) VALUES ('3', 'VG', '1', '1', '3', '1');

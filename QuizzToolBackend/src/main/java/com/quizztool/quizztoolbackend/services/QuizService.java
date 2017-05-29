@@ -8,6 +8,7 @@ package com.quizztool.quizztoolbackend.services;
 import com.quizztool.quizztoolbackend.models.Quizz;
 import com.quizztool.quizztoolbackend.repositories.QuizzRepository;
 import java.util.List;
+import javax.ws.rs.*;
 
 /**
  *
@@ -18,5 +19,9 @@ public class QuizService {
 
     public List<Quizz> getQuizzes() {
         return quizzRepository.getQuizzes();
+    }
+    
+    public Quizz getQuizz(int id){
+        return quizzRepository.getQuizz(id);
     }
 }

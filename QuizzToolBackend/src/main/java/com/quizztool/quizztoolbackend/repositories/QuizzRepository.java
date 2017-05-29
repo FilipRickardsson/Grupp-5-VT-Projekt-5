@@ -12,4 +12,12 @@ public class QuizzRepository {
         session.close();
         return quizzes;
     }
+    
+    public Quizz getQuizz(int QuizzId){
+      Session session = HibernateUtil.getSessionFactory().openSession();
+        Quizz quizz = (Quizz) session.get(Quizz.class, QuizzId);
+        quizz.getQuestions().size();
+        session.close();
+        return quizz;
+    }
 }

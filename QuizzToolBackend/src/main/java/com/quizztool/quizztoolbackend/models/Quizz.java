@@ -80,4 +80,18 @@ public class Quizz implements Serializable {
         this.results = results;
     }
 
+    public List<Question> getQuestions() {
+        return this.questions;
+    }
+
+    public Question getQuestion(int questionId) {
+        Question questionToGet = null;
+        for (Question q : questions) {
+            if (q.getId() == questionId) {
+                questionToGet = q;
+                break;
+            }
+        }
+        return questionToGet;
+    }
 }

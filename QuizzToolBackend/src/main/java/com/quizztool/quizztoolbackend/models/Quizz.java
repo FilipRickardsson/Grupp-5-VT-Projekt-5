@@ -44,12 +44,12 @@ public class Quizz implements Serializable {
         this.results = results;
     }
 
-    public int getQuizId() {
+    public int getQuizzId() {
         return quizzId;
     }
 
-    public void setQuizId(int quizId) {
-        this.quizzId = quizId;
+    public void setQuizzId(int quizzId) {
+        this.quizzId = quizzId;
     }
 
     public String getName() {

@@ -1,7 +1,7 @@
 package com.quizztool.quizztoolbackend.resources;
 
 import com.quizztool.quizztoolbackend.models.Quizz;
-import com.quizztool.quizztoolbackend.services.QuizService;
+import com.quizztool.quizztoolbackend.services.QuizzService;
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -12,12 +12,13 @@ import javax.ws.rs.core.MediaType;
 @Path("/quizzes")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class QuizResource {
-    QuizService quizService= new QuizService();
-    
-@GET
-public List<Quizz> getQuizzes(){
-  return quizService.getQuizzes();
-}
+public class QuizzResource {
+
+    QuizzService quizService = new QuizzService();
+
+    @GET
+    public List<Quizz> getQuizzes() {
+        return quizService.getQuizzes();
+    }
 
 }

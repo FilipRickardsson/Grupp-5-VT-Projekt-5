@@ -4,7 +4,7 @@ import com.quizztool.quizztoolbackend.models.Quizz;
 import com.quizztool.quizztoolbackend.repositories.QuizzRepository;
 import java.util.List;
 
-public class QuizService {
+public class QuizzService {
     QuizzRepository quizzRepository = new QuizzRepository();
 
     public List<Quizz> getQuizzes() {

@@ -23,7 +23,8 @@ public class Question implements Serializable{
     @ManyToMany
     @JsonManagedReference
     private List<Alternative> alternatives;
-
+  
+    
     public Question() {
     }
 
@@ -65,6 +66,5 @@ public class Question implements Serializable{
     public void setAlternatives(List<Alternative> alternatives) {
         this.alternatives = alternatives;
     }
-
-    
+         
 }

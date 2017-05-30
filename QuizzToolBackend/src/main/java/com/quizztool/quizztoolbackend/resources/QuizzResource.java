@@ -21,7 +21,7 @@ import javax.ws.rs.core.MediaType;
 @Path("/quizzes")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class QuizResource {
+public class QuizzResource {
     QuizService quizService= new QuizService();
     
 @GET

@@ -20,8 +20,8 @@ public class QuestionService {
 
     QuestionRepository questionRepository = new QuestionRepository();
 
-    public List<Question> getQuestions() {
-        return questionRepository.getQuestions();
+    public List<Question> getQuestions(int quizzId) {
+        return questionRepository.getQuestions(quizzId);
     }
 }
 

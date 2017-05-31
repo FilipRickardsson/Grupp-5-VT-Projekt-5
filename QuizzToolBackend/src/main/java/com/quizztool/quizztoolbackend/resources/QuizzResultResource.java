@@ -23,4 +23,4 @@ public class QuizzResultResource {
         return quizzResultService.getQuizzResult(quizzId);
     }
 
-}
+}   

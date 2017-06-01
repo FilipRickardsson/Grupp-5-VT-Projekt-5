@@ -20,7 +20,7 @@ public class Quizz implements Serializable {
     private String name;
     private boolean showResult;
 
-    @OneToMany
+    @OneToMany(mappedBy = "quizz")
     @JsonManagedReference
     private List<Question> questions;
 

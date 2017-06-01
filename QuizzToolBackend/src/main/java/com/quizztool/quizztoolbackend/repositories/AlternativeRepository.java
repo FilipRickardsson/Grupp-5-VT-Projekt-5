@@ -6,7 +6,7 @@ import java.util.List;
 import org.hibernate.Session;
 
 
-public class AlternativRepository {
+public class AlternativeRepository {
     public List<Alternative> getQuizzes() {
         Session session = HibernateUtil.getSession();
         List<Alternative> alternatives = session.createCriteria(Alternative.class).list();

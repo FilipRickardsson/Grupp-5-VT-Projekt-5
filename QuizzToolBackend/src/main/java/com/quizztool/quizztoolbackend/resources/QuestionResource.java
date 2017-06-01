@@ -33,7 +33,7 @@ public class QuestionResource {
 }*/
     @GET
     @Path("{quizzId}")
-    public List<Question> getQuizzUser(@PathParam("quizzId") int quizzId) {
+    public List<Question> getQuestions(@PathParam("quizzId") int quizzId) {
         return questionService.getQuestions(quizzId);
 
 }

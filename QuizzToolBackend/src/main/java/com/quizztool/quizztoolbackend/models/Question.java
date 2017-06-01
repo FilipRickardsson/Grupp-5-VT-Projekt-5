@@ -16,7 +16,7 @@ public class Question implements Serializable{
     private int id;
     private String text;
     
-    @ManyToMany(mappedBy="questions")
+    @ManyToMany//(mappedBy="questions")
     @JsonBackReference
     private List<Quizz> quizzes;
     

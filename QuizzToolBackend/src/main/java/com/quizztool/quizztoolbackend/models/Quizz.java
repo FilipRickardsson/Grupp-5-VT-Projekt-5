@@ -42,6 +42,7 @@ public class Quizz implements Serializable {
         this.questions = questions;
         this.courses = courses;
         this.results = results;
+        
     }
 
     public int getQuizzId() {
@@ -59,7 +60,10 @@ public class Quizz implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
+    public List <Question> getQuestions(){
+        return questions;
+    }
+    
     public boolean isShowResult() {
         return showResult;
     }

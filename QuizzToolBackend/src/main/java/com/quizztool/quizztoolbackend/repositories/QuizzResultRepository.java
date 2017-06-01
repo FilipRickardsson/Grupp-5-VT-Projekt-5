@@ -16,7 +16,7 @@ public class QuizzResultRepository {
         List<QuizzResult> quizzResults = criteria.list();
 
         for(QuizzResult qr : quizzResults) {
-            System.out.println(qr);
+            qr.toString();
         }
 
         session.close();

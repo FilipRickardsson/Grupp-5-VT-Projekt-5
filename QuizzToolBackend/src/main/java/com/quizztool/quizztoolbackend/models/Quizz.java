@@ -3,6 +3,7 @@ package com.quizztool.quizztoolbackend.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,6 +20,9 @@ public class Quizz implements Serializable {
 
     private String name;
     private boolean showResult;
+    
+    private Date startTime;
+    private Date endTime;
 
     @ManyToMany
     @JsonManagedReference
@@ -43,6 +47,19 @@ public class Quizz implements Serializable {
         this.courses = courses;
         this.results = results;
     }
+
+    public Quizz(int quizzId, String name, boolean showResult, Date startTime, Date endTime, List<Question> questions, List<Course> courses, List<QuizzResult> results) {
+        this.quizzId = quizzId;
+        this.name = name;
+        this.showResult = showResult;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.questions = questions;
+        this.courses = courses;
+        this.results = results;
+    }
+    
+    
 
     public int getQuizzId() {
         return quizzId;
@@ -79,5 +96,23 @@ public class Quizz implements Serializable {
     public void setResults(List<QuizzResult> results) {
         this.results = results;
     }
+
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+    
+    
 
 }

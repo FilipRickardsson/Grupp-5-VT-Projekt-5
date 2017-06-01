@@ -11,6 +11,6 @@ public class AlternativeService {
     AlternativeRepository alternativeRepository = new AlternativeRepository();
 
     public List<Alternative> getAlternatives() {
-        return alternativeRepository.getQuizzes();
+        return alternativeRepository.getAlternatives();
     }
 }

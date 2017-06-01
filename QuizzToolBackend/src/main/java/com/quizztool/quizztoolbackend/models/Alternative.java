@@ -11,7 +11,7 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Alternative implements Serializable {
-
+    
     @Id
     @GeneratedValue
     private int alternativeId;

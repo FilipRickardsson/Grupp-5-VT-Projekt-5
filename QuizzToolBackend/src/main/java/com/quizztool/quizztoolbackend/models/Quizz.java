@@ -16,11 +16,10 @@ public class Quizz implements Serializable {
     @Id
     @GeneratedValue
     private int quizzId;
-
     private String name;
     private boolean showResult;
 
-    @ManyToMany
+    @OneToMany(mappedBy = "quizz")
     @JsonManagedReference
     private List<Question> questions;
 
@@ -79,5 +78,18 @@ public class Quizz implements Serializable {
     public void setResults(List<QuizzResult> results) {
         this.results = results;
     }
+
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public List<QuizzResult> getResults() {
+        return results;
+    }
+    
 
 }

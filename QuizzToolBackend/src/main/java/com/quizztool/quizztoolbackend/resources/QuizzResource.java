@@ -12,13 +12,12 @@ import javax.ws.rs.core.MediaType;
 @Path("/quizzes")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class QuizzResource {
-
-    QuizzService quizService = new QuizzService();
-
-    @GET
-    public List<Quizz> getQuizzes() {
-        return quizService.getQuizzes();
-    }
-
+public class QuizzResource { 
+ 
+    QuizzService quizService = new QuizzService(); 
+ 
+    @GET 
+    public List<Quizz> getQuizzes() { 
+        return quizService.getQuizzes(); 
+    } 
 }

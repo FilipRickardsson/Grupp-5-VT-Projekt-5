@@ -28,7 +28,7 @@ public class QuizzUser implements Serializable {
     @JsonManagedReference
     private List<Course> courses;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "quizzUser")
     @JsonBackReference
     private List<Alternative> answers;
 

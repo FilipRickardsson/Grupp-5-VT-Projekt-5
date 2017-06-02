@@ -3,11 +3,7 @@ package com.quizztool.quizztoolbackend.resources;
 import com.quizztool.quizztoolbackend.models.QuizzResult;
 import com.quizztool.quizztoolbackend.services.QuizzResultService;
 import java.util.List;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path("/quizzresults")
@@ -23,4 +19,10 @@ public class QuizzResultResource {
         return quizzResultService.getQuizzResult(quizzId);
     }
 
+    @POST
+    @Path("{quizzUserId}&{alternativeId}")
+    public void saveResult(@PathParam("quizzUserId") int quizzUserId, @PathParam("questionId") int questionId, @PathParam("alternativeId") int alternativeId){
+        //quizzResultService.saveQuizzResult();
+        System.out.println("SaveResult repository");
+    }
 }

@@ -12,4 +12,7 @@ public class QuizzResultService {
         return quizzResultRepository.getQuizzResult(quizzId);
     }
 
+    public void saveQuizzResult(QuizzResult quizzResult){
+        quizzResultRepository.addResult(quizzResult);
+    }
 }

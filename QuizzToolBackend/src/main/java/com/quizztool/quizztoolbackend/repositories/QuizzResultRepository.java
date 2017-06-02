@@ -23,4 +23,11 @@ public class QuizzResultRepository {
         return quizzResults;
     }
 
+    public void addResult(QuizzResult quizzResult) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.save(quizzResult);
+        session.getTransaction().commit();
+        session.close();
+    }
 }

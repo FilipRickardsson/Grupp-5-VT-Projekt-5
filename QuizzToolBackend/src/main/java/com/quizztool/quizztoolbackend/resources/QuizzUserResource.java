@@ -10,7 +10,7 @@ import com.quizztool.quizztoolbackend.services.QuizzUserService;
 import javax.ws.rs.PathParam;
 
 @Path("/quizz_users")
-@Produces(MediaType.APPLICATION_JSON)
+//@Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class QuizzUserResource {
 

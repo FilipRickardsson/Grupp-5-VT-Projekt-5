@@ -15,6 +15,7 @@ public class Alternative implements Serializable {
     @Id
     @GeneratedValue
     private int alternativeId;
+    
     private String text;
     private boolean correct;
 
@@ -61,7 +62,7 @@ public class Alternative implements Serializable {
         this.correct = correct;
     }
 
-    public List<Question> getQuestions() {
+    public List<Question> getQuestionsA() {
         return questions;
     }
 
@@ -69,7 +70,7 @@ public class Alternative implements Serializable {
         this.questions = questions;
     }
 
-    public List<QuizzUser> getQuizzUsers() {
+    public List<QuizzUser> getQuizzUsersA() {
         return quizzUsers;
     }
 

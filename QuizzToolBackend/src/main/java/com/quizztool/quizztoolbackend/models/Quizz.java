@@ -60,9 +60,6 @@ public class Quizz implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    public List <Question> getQuestions(){
-        return questions;
-    }
     
     public boolean isShowResult() {
         return showResult;

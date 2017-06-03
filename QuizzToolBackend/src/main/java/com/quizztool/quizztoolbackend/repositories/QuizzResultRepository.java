@@ -15,12 +15,20 @@ public class QuizzResultRepository {
         criteria.add(Restrictions.eq("quizz.quizzId", quizzId));
         List<QuizzResult> quizzResults = criteria.list();
 
-        for(QuizzResult qr : quizzResults) {
+        for (QuizzResult qr : quizzResults) {
             qr.toString();
         }
 
         session.close();
         return quizzResults;
+    }
+
+    public void addResult(QuizzResult quizzResult) {
+        Session session = HibernateUtil.getSession();
+        session.beginTransaction();
+        session.save(quizzResult);
+        session.getTransaction().commit();
+        session.close();
     }
 
 }

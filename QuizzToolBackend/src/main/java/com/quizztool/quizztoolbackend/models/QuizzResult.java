@@ -74,17 +74,9 @@ public class QuizzResult implements Serializable {
         this.quizzTime = time;
     }
 
-//    public QuizzUser getQuizzUser() {
-//        return quizzUser;
-//    }
-
     public void setQuizzUser(QuizzUser quizzUser) {
         this.quizzUser = quizzUser;
     }
-
-//    public Quizz getQuizz() {
-//        return quizz;
-//    }
 
     public void setQuizz(Quizz quizz) {
         this.quizz = quizz;

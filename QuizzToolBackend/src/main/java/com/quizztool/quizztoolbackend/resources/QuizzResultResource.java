@@ -23,4 +23,10 @@ public class QuizzResultResource {
         return quizzResultService.getQuizzResult(quizzId);
     }
 
+    @GET
+    @Path("{userId}&{quizzId}&{answers}")
+    public QuizzResult submitAnswers(@PathParam("userId") int userId, @PathParam("quizzId") int quizzId, @PathParam("answers") String answers) {
+        return quizzResultService.submitAnswers(userId, quizzId, answers);
+    }
+
 }

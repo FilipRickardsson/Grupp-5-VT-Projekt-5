@@ -52,20 +52,21 @@ public class Question implements Serializable {
         this.text = text;
     }
 
-    public Quizz getQuizz() {
-        return quizz;
-    }
-
     public void setQuizz(Quizz quizz) {
         this.quizz = quizz;
-    }
-
-    public List<Alternative> getAlternatives() {
-        return alternatives;
     }
 
     public void setAlternatives(List<Alternative> alternatives) {
         this.alternatives = alternatives;
     }
 
+    public List<Alternative> getAlternatives() {
+        return alternatives;
+    }
+
+    @Override
+    public String toString() {
+        return "Question{" + "id=" + id + ", text=" + text + ", quizz=" + quizz + ", alternatives=" + alternatives + '}';
+    }
+    
 }

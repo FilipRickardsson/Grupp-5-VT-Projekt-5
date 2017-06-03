@@ -61,17 +61,17 @@ public class Alternative implements Serializable {
         this.correct = correct;
     }
 
-    public List<Question> getQuestions() {
-        return questions;
-    }
+//    public List<Question> getQuestions() {
+//        return questions;
+//    }
 
     public void setQuestions(List<Question> questions) {
         this.questions = questions;
     }
 
-    public List<QuizzUser> getQuizzUsers() {
-        return quizzUsers;
-    }
+//    public List<QuizzUser> getQuizzUsers() {
+//        return quizzUsers;
+//    }
 
     public void setQuizzUsers(List<QuizzUser> quizzUsers) {
         this.quizzUsers = quizzUsers;

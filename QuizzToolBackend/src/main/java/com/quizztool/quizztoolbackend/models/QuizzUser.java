@@ -1,6 +1,7 @@
 package com.quizztool.quizztoolbackend.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.io.Serializable;
 import java.util.List;
@@ -34,6 +35,7 @@ public class QuizzUser implements Serializable {
 
     @OneToMany(mappedBy = "quizzUser")
     @JsonBackReference
+    @JsonIgnore
     private List<QuizzResult> results;
 
     public QuizzUser() {

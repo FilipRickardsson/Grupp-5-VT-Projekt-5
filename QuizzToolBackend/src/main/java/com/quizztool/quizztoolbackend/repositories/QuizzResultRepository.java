@@ -16,7 +16,7 @@ public class QuizzResultRepository {
         List<QuizzResult> quizzResults = criteria.list();
 
         for (QuizzResult qr : quizzResults) {
-            qr.toString();
+            System.out.println(qr.getQuizzUserC().getCourses().toString());
         }
 
         session.close();
@@ -29,6 +29,22 @@ public class QuizzResultRepository {
         session.save(quizzResult);
         session.getTransaction().commit();
         session.close();
+    }
+
+    public List<QuizzResult> getUserQuizzResults(int userId) {
+        Session session = HibernateUtil.getSession();
+
+        Criteria criteria = session.createCriteria(QuizzResult.class);
+        criteria.add(Restrictions.eq("quizzUser.id", userId));
+        List<QuizzResult> quizzResults = criteria.list();
+
+        for (QuizzResult qr : quizzResults) {
+            System.out.println(qr.getQuizzUserC().getCourses().toString());
+            System.out.println(qr.getQuizz().toString());
+        }
+
+        session.close();
+        return quizzResults;
     }
 
 }

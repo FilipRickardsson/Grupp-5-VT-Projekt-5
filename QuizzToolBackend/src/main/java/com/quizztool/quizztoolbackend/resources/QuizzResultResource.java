@@ -20,13 +20,25 @@ public class QuizzResultResource {
     @GET
     @Path("{quizzId}")
     public List<QuizzResult> getQuizzUser(@PathParam("quizzId") int quizzId) {
-        return quizzResultService.getQuizzResult(quizzId);
+        List<QuizzResult> list = quizzResultService.getQuizzResult(quizzId);
+
+        for (QuizzResult qr : list) {
+            System.out.println(qr.getQuizzUserC().getUsername());
+        }
+
+        return list;
     }
 
     @GET
     @Path("{userId}&{quizzId}&{answers}")
     public QuizzResult submitAnswers(@PathParam("userId") int userId, @PathParam("quizzId") int quizzId, @PathParam("answers") String answers) {
         return quizzResultService.submitAnswers(userId, quizzId, answers);
+    }
+
+    @GET
+    @Path("/userresults/{userId}")
+    public List<QuizzResult> getUserQuizzResults(@PathParam("userId") int userId) {
+        return quizzResultService.getUserQuizzResults(userId);
     }
 
 }

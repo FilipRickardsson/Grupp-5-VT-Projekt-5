@@ -60,19 +60,18 @@ public class QuizzResultService {
 
         quizzResultRepository.addResult(quizzResult);
 
-        System.out.println("Debaggor 1: " + points);
-        System.out.println("Debaggor 2: " + userId);
-
         QuizzRepository quizzRepository = new QuizzRepository();
         Quizz quizz = quizzRepository.getQuizz(quizzId);
-
-        System.out.println("Debaggor 3: " + quizz.isShowResult());
 
         if (quizz.isShowResult()) {
             return quizzResult;
         } else {
             return null;
         }
+    }
+
+    public List<QuizzResult> getUserQuizzResults(int userId) {
+        return quizzResultRepository.getUserQuizzResults(userId);
     }
 
 }

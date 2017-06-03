@@ -33,15 +33,14 @@ public class QuizzResult implements Serializable {
     public QuizzResult() {
     }
 
-    public QuizzResult(int id, GradeType grade, int points, String quizzTime, QuizzUser quizzUser, Quizz quizz) {
-        this.id = id;
-        this.grade = grade;
-        this.points = points;
-        this.quizzTime = quizzTime;
-        this.quizzUser = quizzUser;
-        this.quizz = quizz;
-    }
-
+//    public QuizzResult(int id, GradeType grade, int points, String quizzTime, QuizzUser quizzUser, Quizz quizz) {
+//        this.id = id;
+//        this.grade = grade;
+//        this.points = points;
+//        this.quizzTime = quizzTime;
+//        this.quizzUser = quizzUser;
+//        this.quizz = quizz;
+//    }
     public int getId() {
         return id;
     }
@@ -74,10 +73,22 @@ public class QuizzResult implements Serializable {
         this.quizzTime = time;
     }
 
+    public QuizzUser getQuizzUserC() {
+        return quizzUser;
+    }
+
+    public QuizzUser getQuizzUser() {
+        return this.quizzUser;
+    }
+
     public void setQuizzUser(QuizzUser quizzUser) {
         this.quizzUser = quizzUser;
     }
 
+    public Quizz getQuizz() {
+        return quizz;
+    }
+    
     public void setQuizz(Quizz quizz) {
         this.quizz = quizz;
     }

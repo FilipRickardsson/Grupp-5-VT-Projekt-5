@@ -25,4 +25,13 @@ public class QuizzRepository {
         session.close();
         return quizz;
     }
+
+    public void addQuizz(Quizz quizzToAdd) {
+        Session session = HibernateUtil.getSession();
+        session.beginTransaction();
+        session.save(quizzToAdd);
+        session.getTransaction().commit();
+        session.close();
+    }
+
 }

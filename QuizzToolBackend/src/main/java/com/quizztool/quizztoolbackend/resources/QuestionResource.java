@@ -23,4 +23,5 @@ public class QuestionResource {
         return questionService.getQuestions(quizzId);
 
     }
+    
 }

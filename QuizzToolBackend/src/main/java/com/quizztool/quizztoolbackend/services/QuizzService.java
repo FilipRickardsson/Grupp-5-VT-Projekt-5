@@ -5,10 +5,15 @@ import com.quizztool.quizztoolbackend.repositories.QuizzRepository;
 import java.util.List;
 
 public class QuizzService {
+
     QuizzRepository quizzRepository = new QuizzRepository();
 
     public List<Quizz> getQuizzes() {
         return quizzRepository.getQuizzes();
     }
-    
+
+    public void addQuizz(Quizz quizzToAdd) {
+        quizzRepository.addQuizz(quizzToAdd);
+    }
+
 }

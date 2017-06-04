@@ -1,6 +1,7 @@
 package com.quizztool.quizztoolbackend.repositories;
 
 import com.quizztool.quizztoolbackend.models.Quizz;
+import com.quizztool.quizztoolbackend.models.QuizzResult;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -25,4 +26,13 @@ public class QuizzRepository {
         session.close();
         return quizz;
     }
+
+    public void addQuizz(Quizz quizzToAdd) {
+        Session session = HibernateUtil.getSession();
+        session.beginTransaction();
+        session.save(quizzToAdd);
+        session.getTransaction().commit();
+        session.close();
+    }
+
 }

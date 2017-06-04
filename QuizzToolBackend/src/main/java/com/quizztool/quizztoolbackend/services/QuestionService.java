@@ -11,4 +11,5 @@ public class QuestionService {
     public List<Question> getQuestions(int quizzId) {
         return questionRepository.getQuestions(quizzId);
     }
+    
 }

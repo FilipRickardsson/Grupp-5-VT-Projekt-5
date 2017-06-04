@@ -1,7 +1,6 @@
 package com.quizztool.quizztoolbackend.repositories;
 
 import com.quizztool.quizztoolbackend.models.Quizz;
-import com.quizztool.quizztoolbackend.models.QuizzResult;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;

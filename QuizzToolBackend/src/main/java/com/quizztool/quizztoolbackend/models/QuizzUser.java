@@ -29,10 +29,6 @@ public class QuizzUser implements Serializable {
     @JsonManagedReference
     private List<Course> courses;
 
-    @ManyToMany
-    @JsonBackReference
-    private List<Alternative> answers;
-
     @OneToMany(mappedBy = "quizzUser")
     @JsonBackReference
     @JsonIgnore
@@ -91,17 +87,13 @@ public class QuizzUser implements Serializable {
         this.courses = courses;
     }
 
-    public void setAnswers(List<Alternative> answers) {
-        this.answers = answers;
-    }
-
     public void setResults(List<QuizzResult> results) {
         this.results = results;
     }
 
     @Override
     public String toString() {
-        return "QuizzUser{" + "id=" + id + ", username=" + username + ", password=" + password + ", quizzUserType=" + quizzUserType + ", courses=" + courses + ", answers=" + answers + ", results=" + results + '}';
+        return "QuizzUser{" + "id=" + id + ", username=" + username + ", password=" + password + ", quizzUserType=" + quizzUserType + ", courses=" + courses + ", results=" + results + '}';
     }
 
 }

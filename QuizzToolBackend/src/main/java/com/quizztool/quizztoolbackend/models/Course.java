@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Course implements Serializable {
@@ -17,7 +18,7 @@ public class Course implements Serializable {
     private int id;
     private String name;
 
-    @ManyToMany
+    @OneToMany(mappedBy = "course")
     @JsonManagedReference
     private List<Quizz> quizzes;
 
@@ -58,5 +59,5 @@ public class Course implements Serializable {
     public String toString() {
         return "Course{" + "id=" + id + ", name=" + name + ", quizzes=" + quizzes + '}';
     }
-    
+
 }

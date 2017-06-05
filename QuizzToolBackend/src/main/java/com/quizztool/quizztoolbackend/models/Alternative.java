@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Alternative implements Serializable {
@@ -18,23 +19,11 @@ public class Alternative implements Serializable {
     private String text;
     private boolean correct;
 
-    @ManyToMany(mappedBy = "alternatives")
+    @ManyToOne
     @JsonBackReference
-    private List<Question> questions;
-
-    @ManyToMany(mappedBy = "answers")
-    @JsonManagedReference
-    private List<QuizzUser> quizzUsers;
+    private Question question;
 
     public Alternative() {
-    }
-
-    public Alternative(int alternativeId, String text, boolean correct, List<Question> questions, List<QuizzUser> quizzUsers) {
-        this.alternativeId = alternativeId;
-        this.text = text;
-        this.correct = correct;
-        this.questions = questions;
-        this.quizzUsers = quizzUsers;
     }
 
     public int getAlternativeId() {
@@ -64,17 +53,12 @@ public class Alternative implements Serializable {
 //    public List<Question> getQuestions() {
 //        return questions;
 //    }
-
-    public void setQuestions(List<Question> questions) {
-        this.questions = questions;
+    public void setQuestions(Question question) {
+        this.question = question;
     }
 
 //    public List<QuizzUser> getQuizzUsers() {
 //        return quizzUsers;
 //    }
-
-    public void setQuizzUsers(List<QuizzUser> quizzUsers) {
-        this.quizzUsers = quizzUsers;
-    }
 
 }

@@ -7,7 +7,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -24,24 +24,15 @@ public class Quizz implements Serializable {
     @JsonManagedReference
     private List<Question> questions;
 
-    @ManyToMany(mappedBy = "quizzes")
+    @ManyToOne
     @JsonBackReference
-    private List<Course> courses;
+    private Course course;
 
     @OneToMany(mappedBy = "quizz")
     @JsonBackReference
     private List<QuizzResult> results;
 
     public Quizz() {
-    }
-
-    public Quizz(int quizzId, String name, boolean showResult, List<Question> questions, List<Course> courses, List<QuizzResult> results) {
-        this.quizzId = quizzId;
-        this.name = name;
-        this.showResult = showResult;
-        this.questions = questions;
-        this.courses = courses;
-        this.results = results;
     }
 
     public int getQuizzId() {
@@ -72,8 +63,8 @@ public class Quizz implements Serializable {
         this.questions = questions;
     }
 
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
+    public void setCourses(Course course) {
+        this.course = course;
     }
 
     public void setResults(List<QuizzResult> results) {

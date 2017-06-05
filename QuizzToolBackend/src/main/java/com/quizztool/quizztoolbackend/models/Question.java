@@ -7,8 +7,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Question implements Serializable {
@@ -22,7 +22,7 @@ public class Question implements Serializable {
     @JsonBackReference
     private Quizz quizz;
 
-    @ManyToMany
+    @OneToMany(mappedBy = "question")
     @JsonManagedReference
     private List<Alternative> alternatives;
 

@@ -8,6 +8,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -36,16 +37,6 @@ public class QuizzUser implements Serializable {
 
     public QuizzUser() {
     }
-
-//    public QuizzUser(int id, String username, String password, QuizzUserType quizzUserType, List<Course> courses, List<Alternative> answers, List<QuizzResult> results) {
-//        this.id = id;
-//        this.username = username;
-//        this.password = password;
-//        this.quizzUserType = quizzUserType;
-//        this.courses = courses;
-//        this.answers = answers;
-//        this.results = results;
-//    }
 
     public int getId() {
         return id;

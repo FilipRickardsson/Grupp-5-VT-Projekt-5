@@ -20,6 +20,9 @@ public class Quizz implements Serializable {
     private String name;
     private boolean showResult;
 
+    private String startTime;
+    private String stopTime;
+
     @OneToMany(mappedBy = "quizz")
     @JsonManagedReference
     private List<Question> questions;
@@ -69,6 +72,22 @@ public class Quizz implements Serializable {
 
     public void setResults(List<QuizzResult> results) {
         this.results = results;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getStopTime() {
+        return stopTime;
+    }
+
+    public void setStopTime(String stopTime) {
+        this.stopTime = stopTime;
     }
 
 }

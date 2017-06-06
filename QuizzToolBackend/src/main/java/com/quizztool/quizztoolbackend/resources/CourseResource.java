@@ -21,4 +21,6 @@ public class CourseResource {
         return courseService.getCourses();
     }
 
+
+
 }

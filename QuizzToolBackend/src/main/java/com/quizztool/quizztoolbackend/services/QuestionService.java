@@ -11,5 +11,13 @@ public class QuestionService {
     public List<Question> getQuestions(int quizzId) {
         return questionRepository.getQuestions(quizzId);
     }
-    
+
+    public void addQuestion(Question questionToAdd, int quizzId) {
+        questionRepository.addQuestion(questionToAdd, quizzId);
+    }
+
+    public Question getLastQuestion() {
+        return questionRepository.getLastQuestion();
+    }
+
 }

@@ -1,6 +1,6 @@
 package com.quizztool.quizztoolbackend.resources;
 
-import com.quizztool.quizztoolbackend.models.Question;
+import com.quizztool.quizztoolbackend.models.Course;
 import com.quizztool.quizztoolbackend.models.Quizz;
 import com.quizztool.quizztoolbackend.services.QuizzService;
 import java.util.List;
@@ -25,8 +25,15 @@ public class QuizzResource {
     }
 
     @POST
-    public void addQuizz(Quizz quizzToAdd) {
-        quizzService.addQuizz(quizzToAdd);
+    @Path("{courseId}")
+    public void addQuizz(Quizz quizzToAdd, @PathParam("courseId") int courseId) {
+        quizzService.addQuizz(quizzToAdd, courseId);
+    }
+
+    @GET
+    @Path("/lastQuizz")
+    public Quizz getLastQuizz() {
+        return quizzService.getLastQuizz();
     }
 
 }

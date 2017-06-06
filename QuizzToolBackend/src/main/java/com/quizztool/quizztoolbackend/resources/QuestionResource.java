@@ -1,10 +1,12 @@
 package com.quizztool.quizztoolbackend.resources;
 
 import com.quizztool.quizztoolbackend.models.Question;
+import com.quizztool.quizztoolbackend.models.Quizz;
 import com.quizztool.quizztoolbackend.services.QuestionService;
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -23,5 +25,17 @@ public class QuestionResource {
         return questionService.getQuestions(quizzId);
 
     }
-    
+
+    @POST
+    @Path("{quizzId}")
+    public void addQuizz(Question questionToAdd, @PathParam("quizzId") int quizzId) {
+        questionService.addQuestion(questionToAdd, quizzId);
+    }
+
+    @GET
+    @Path("/lastQuestion")
+    public Question getLastQuestion() {
+        return questionService.getLastQuestion();
+    }
+
 }

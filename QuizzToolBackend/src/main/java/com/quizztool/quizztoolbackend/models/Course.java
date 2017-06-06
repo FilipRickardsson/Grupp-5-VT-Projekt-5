@@ -29,6 +29,14 @@ public class Course implements Serializable {
     public Course() {
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Course(String name, List<Quizz> quizzes, List<QuizzUser> quizzUsers) {
         this.name = name;
         this.quizzes = quizzes;

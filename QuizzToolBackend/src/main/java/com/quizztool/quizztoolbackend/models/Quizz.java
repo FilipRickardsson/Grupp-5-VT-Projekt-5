@@ -66,7 +66,7 @@ public class Quizz implements Serializable {
         this.questions = questions;
     }
 
-    public void setCourses(Course course) {
+    public void setCourse(Course course) {
         this.course = course;
     }
 
@@ -90,4 +90,9 @@ public class Quizz implements Serializable {
         this.stopTime = stopTime;
     }
 
+//    public Course getCourse() {
+//        return course;
+//    }
+
+    
 }

@@ -19,6 +19,7 @@ public class QuizzUserRepository {
         if (quizzUser != null) {
             System.out.println(quizzUser);
             System.out.println(quizzUser.getCourses().toString());
+            
         }
 
         session.close();

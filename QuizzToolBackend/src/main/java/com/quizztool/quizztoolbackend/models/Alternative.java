@@ -47,14 +47,6 @@ public class Alternative implements Serializable {
         this.correct = correct;
     }
 
-//    public List<Question> getQuestions() {
-//        return questions;
-//    }
-
-//    public List<QuizzUser> getQuizzUsers() {
-//        return quizzUsers;
-//    }
-
     public void setQuestion(Question question) {
         this.question = question;
     }

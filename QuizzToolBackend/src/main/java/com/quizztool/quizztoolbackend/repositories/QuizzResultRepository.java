@@ -8,7 +8,7 @@ import org.hibernate.criterion.Restrictions;
 
 public class QuizzResultRepository {
 
-    public List<QuizzResult> getQuizzResult(int quizzId) {
+    public List<QuizzResult> getQuizzResults(int quizzId) {
         Session session = HibernateUtil.getSession();
 
         Criteria criteria = session.createCriteria(QuizzResult.class);

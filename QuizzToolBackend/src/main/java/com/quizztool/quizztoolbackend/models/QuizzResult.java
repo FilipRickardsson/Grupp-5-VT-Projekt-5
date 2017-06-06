@@ -33,14 +33,6 @@ public class QuizzResult implements Serializable {
     public QuizzResult() {
     }
 
-//    public QuizzResult(int id, GradeType grade, int points, String quizzTime, QuizzUser quizzUser, Quizz quizz) {
-//        this.id = id;
-//        this.grade = grade;
-//        this.points = points;
-//        this.quizzTime = quizzTime;
-//        this.quizzUser = quizzUser;
-//        this.quizz = quizz;
-//    }
     public int getId() {
         return id;
     }

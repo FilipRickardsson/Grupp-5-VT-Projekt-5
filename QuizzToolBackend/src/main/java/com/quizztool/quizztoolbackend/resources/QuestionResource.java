@@ -1,7 +1,6 @@
 package com.quizztool.quizztoolbackend.resources;
 
 import com.quizztool.quizztoolbackend.models.Question;
-import com.quizztool.quizztoolbackend.models.Quizz;
 import com.quizztool.quizztoolbackend.services.QuestionService;
 import java.util.List;
 import javax.ws.rs.Consumes;

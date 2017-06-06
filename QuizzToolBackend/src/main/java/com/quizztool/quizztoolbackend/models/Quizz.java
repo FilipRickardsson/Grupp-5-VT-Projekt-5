@@ -89,10 +89,5 @@ public class Quizz implements Serializable {
     public void setStopTime(String stopTime) {
         this.stopTime = stopTime;
     }
-
-//    public Course getCourse() {
-//        return course;
-//    }
-
     
 }

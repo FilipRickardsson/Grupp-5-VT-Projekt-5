@@ -1,6 +1,5 @@
 package com.quizztool.quizztoolbackend.repositories;
 
-import com.quizztool.quizztoolbackend.models.Course;
 import com.quizztool.quizztoolbackend.models.Question;
 import com.quizztool.quizztoolbackend.models.Quizz;
 import java.util.List;
@@ -30,11 +29,7 @@ public class QuestionRepository {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
 
-//        System.out.println("BE Debagger 1: " + quizzId);
-
         Quizz persistenceQuizz = (Quizz) session.load(Quizz.class, quizzId);
-//        System.out.println("BE Debagger 2: " + persistenceQuizz.getQuizzId());
-
         questionToAdd.setQuizz(persistenceQuizz);
 
         session.save(questionToAdd);
@@ -49,7 +44,7 @@ public class QuestionRepository {
         criteria.addOrder(Order.desc("id"));
         criteria.setMaxResults(1);
         Question question = (Question) criteria.uniqueResult();
-        
+
         question.toString();
 
         session.close();

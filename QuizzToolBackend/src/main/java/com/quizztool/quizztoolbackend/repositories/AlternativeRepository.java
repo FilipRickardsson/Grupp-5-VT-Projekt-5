@@ -10,11 +10,7 @@ public class AlternativeRepository {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
 
-        System.out.println("BE Debagger 1: " + questionId);
-
         Question persistenceQuestion = (Question) session.load(Question.class, questionId);
-        System.out.println("BE Debagger 2: " + persistenceQuestion.getId());
-
         alternativeToAdd.setQuestion(persistenceQuestion);
 
         session.save(alternativeToAdd);

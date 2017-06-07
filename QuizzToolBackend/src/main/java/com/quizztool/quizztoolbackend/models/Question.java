@@ -29,13 +29,6 @@ public class Question implements Serializable {
     public Question() {
     }
 
-    public Question(int id, String text, Quizz quizz, List<Alternative> alternatives) {
-        this.id = id;
-        this.text = text;
-        this.quizz = quizz;
-        this.alternatives = alternatives;
-    }
-
     public int getId() {
         return id;
     }

@@ -2,9 +2,7 @@ package com.quizztool.quizztoolbackend.repositories;
 
 import com.quizztool.quizztoolbackend.models.Course;
 import java.util.List;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.criterion.Order;
 
 public class CourseRepository {
 

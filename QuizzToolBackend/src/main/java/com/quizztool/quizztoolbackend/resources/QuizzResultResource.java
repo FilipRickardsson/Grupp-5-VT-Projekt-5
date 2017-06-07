@@ -20,7 +20,7 @@ public class QuizzResultResource {
     @GET
     @Path("{quizzId}")
     public List<QuizzResult> getQuizzUser(@PathParam("quizzId") int quizzId) {
-        List<QuizzResult> list = quizzResultService.getQuizzResult(quizzId);
+        List<QuizzResult> list = quizzResultService.getQuizzResults(quizzId);
 
         for (QuizzResult qr : list) {
             System.out.println(qr.getQuizzUserC().getUsername());

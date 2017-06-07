@@ -12,6 +12,4 @@ public class CourseService {
         return courseRepository.getCourses();
     }
 
-
-
 }
